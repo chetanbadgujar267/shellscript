@@ -1,0 +1,82 @@
+#!/bin/bash
+
+#Read data from users
+readDataFromUser()
+{
+echo "Enter space separated 2 numbers:"
+read int1 int2
+}
+
+#Function to do addtion and return the total
+addition()
+{
+total=$(($1+$2))
+}
+
+#Function to do substraction and return the total
+substraction()
+{
+total=$(($1-$2))
+}
+
+#Function to do multiplication and return the total
+multiplication()
+{
+total=$(($1*$2))
+}
+
+#Function to do division and return the total
+division()
+{
+total=$(($1/$2))
+}
+
+#Check whether anumber is Non-zero
+checkNonZero()
+{
+x=$(($1+100))
+if [ $x -ne 100 ];then
+return 0
+else
+return 1
+fi
+}
+
+#Main program starts from here
+echo "\nWhat arithmatic operation you want to perform?\n" #\n is used for inserting new line
+echo "Please enter:\n\
+1: For Addition\n\
+2: For Substraction\n\
+3: For Multiplication\n\
+4: For Division\n"
+read userInput
+
+case $userInput in
+1) readDataFromUser #calling readDataFromUser function
+   addition int1 int2 #calling addition function by passing 2 values provided by function readDataFromUser
+   echo "Addition of entered numbers is $total\n"
+   ;;
+
+2) readDataFromUser #calling readDataFromUser function
+   substraction int1 int2 #calling substraction function by passing 2 values provided by function readDataFromUser
+   echo "Substraction of entered numbers is $total\n"
+   ;;
+
+3) readDataFromUser #calling readDataFromUser function
+   multiplication int1 int2 #calling multiplication function by passing 2 values provided by function readDataFromUser
+   echo "Multiplication of entered numbers is $total\n"
+   ;;
+
+4) readDataFromUser #calling readDataFromUser function
+   checkNonZero int2 #calling checkNonZero function
+   AnswerOfNonZero=$? #exit status of function checkNonZero
+   if [ $AnswerOfNonZero -eq 0 ];then
+   division int1 int2 #calling division function by passing 2 values provided by function readDataFromUser
+   echo "Division of entered numbers is $total\n"
+   else
+   echo "Division by zero is not possible!\n"
+   fi
+   ;;
+
+*) echo "Sorry, you have entered wrong option!\n"
+esac
