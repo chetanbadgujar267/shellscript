@@ -1,0 +1,9 @@
+#!/bin/bash
+
+trap 'echo "someone has used CTRL+C to terminated the script";date;exit' INT
+
+while true;
+do
+echo "Backup is running...."
+sleep 5
+done

@@ -1,0 +1,10 @@
+echo "what kind of processes you want to see, cpu-consuming or ram-consuming?"
+read userinput
+case $userinput in
+"ram")echo "These are the processes consuming high mwmory"
+ps -eo pid,pmem,user,args|sort -nrk 2|head -10
+;;
+"cpu")echo "These are the processes consuming high cpu"
+ps -eo pid,pcpu,user,args|sort -nrk 2|head -10
+;;
+esac

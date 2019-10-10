@@ -1,0 +1,22 @@
+#!/bin/bash
+echo "what kind of processes you want to see? RAM consuming or CPU consuming? If RAM, press r and If CPU press c:"
+read userinput
+
+ram_utilization () {
+ps -eo pid,pmem,user,args|sort -nrk 2|head -10
+}
+
+cpu_utilization () {
+ps -eo pid,pcpu,user,args|sort -nrk 2|head -10
+
+}
+
+case $userinput in
+r) echo "These are the top 10 RAM consuming processes:"
+   ram_utilization
+   ;;
+c) echo "These are the top 10 CPU consuming processes:"
+   cpu_utilization
+   ;;
+*) echo "you have entered wrong choice. Please enter either r or c"
+esac

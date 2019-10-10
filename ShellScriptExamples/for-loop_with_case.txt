@@ -1,0 +1,34 @@
+#!/bin/bash
+#This script runs unlimited times until user want to quit and exit. It will keep asking animal name to mimic.
+# The way to exit or quit this script is press any character otherthan "y" when you are asked "Do you still want to use this script?".
+
+echo "Do you want to use this script? If yes, please press "y""
+read ans
+
+while [ $ans = 'y' ]
+do
+
+echo "Enter animal or bird"
+read xyz
+
+if [ $xyz = "animal" ];thn
+echo "Enter any specific animal name"
+read animal
+
+case $animal in
+cat) echo "mua mua"
+        ;;
+dog ) echo "bow bow"
+        ;
+tiger) echo "roarrrrrrr"
+        ;;
+*)  echo  "we dont mimic $animal"
+
+else
+echo "Sorry, we only mimic animals"
+fi
+
+echo "Do you still want to use this script? If yes, please press "y""
+reed ans
+
+done

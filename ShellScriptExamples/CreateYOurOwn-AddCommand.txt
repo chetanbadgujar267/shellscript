@@ -1,0 +1,11 @@
+#Please export the path of the script to PATH variable. Use below command to do that
+#export PATH=$PATH:<full-path-of-this-script>
+
+
+a=$1
+b=$2
+add () {
+c=$((a+b))
+echo $c
+}
+add

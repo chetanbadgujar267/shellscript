@@ -1,0 +1,28 @@
+echo "enter [y/n]"
+read response
+
+if [ "$response" = y ];then
+echo "it will continue"
+else
+trap "echo works 10" 10 EXIT
+exit 10
+fi
+
+while getopts :s:m: TIMED
+do
+case $TIMED in
+s)TIME=$OPTARG
+;;
+m)TIME=$(($OPTARG*60))
+;;
+\?)echo "wrong option passed!"
+trap "echo works 5;touch trapped.$$" 5 exit
+exit 5
+;;
+esac
+done
+echo "Time=$TIME seconds"
+
+ping localhost
+
+trap "echo works 2" 2 exit

@@ -1,0 +1,7 @@
+#!/bin/bash
+df -Pkh > /var/tmp/diskoutput
+while read x
+do
+echo $x|awk '{print $6\t$3}'
+
+done < /var/tmp/diskoutput

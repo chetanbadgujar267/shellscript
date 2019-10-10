@@ -1,0 +1,15 @@
+#!/bin/bash
+echo "what kind of processes you want to see, cpu-consuming or ram-consuming?"
+read userinput
+#echo "enter no of process u want to see consuming highmemory"
+#read num
+
+if [ "$userinput" = "ram" ];then
+echo "These are the processes consuming high mwmory"
+ps -eo pid,pmem,user,args|sort -nrk 2|head -10
+elif [ "$userinput" = "cpu" ];then
+echo "These are the processes consuming high cpu"
+ps -eo pid,pcpu,user,args|sort -nrk 2|head -10
+else
+echo "user has not provided ethe suitable input"
+fi

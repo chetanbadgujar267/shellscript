@@ -1,0 +1,10 @@
+for i in `cat /var/tmp/serverlist`
+do
+
+ssh -q $i '(
+hostname
+date
+ifconfig
+)' >> output
+
+done

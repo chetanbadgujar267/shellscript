@@ -1,0 +1,10 @@
+#!/bin/bash
+trap 'echo "this is terminated by `who am i`";exit' INT
+
+
+
+while true
+do
+echo "backing up is going on..."
+sleep 2
+done

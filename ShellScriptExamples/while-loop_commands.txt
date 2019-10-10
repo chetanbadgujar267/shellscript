@@ -1,0 +1,8 @@
+while read x
+do
+i=`echo $x|awk '{print $2}'`
+#echo $x
+if [ $i = "node2" -o $i = "node3" ];then
+echo "$i server will be rebooted"
+fi
+done < /var/tmp/script/serverlist

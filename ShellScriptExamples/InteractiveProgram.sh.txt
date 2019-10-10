@@ -1,0 +1,32 @@
+function addition ()
+{
+sum=$(($1+$2))
+echo "Sum of your entered number is $sum"
+}
+while true
+do
+
+echo "Do you want to perform the operation"
+read answer
+answer=`echo $answer|tr '[:upper:]' '[:lower:]'`
+if [ "$answer" = "yes" ];then
+echo "What operation u want to perform, add/mult?"
+read answer1
+if [ "$answer1" = "add" ];then
+echo "bro, plz enter 2 numbers"
+read a b
+addition a b
+elif [ "$answer1" = "mult" ];then
+echo "bro, plz enter 2 numbers"
+read x y
+multiply=$((x*y))
+echo "Multiplication of your entered number is $multiply"
+else
+echo "chose either add or mult?"
+fi
+
+else
+echo "Thanks for using my script, BYE!"
+exit
+fi
+done

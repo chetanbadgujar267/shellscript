@@ -1,0 +1,9 @@
+ADDITION ()
+{
+total=$(($1+$2))
+}
+
+echo "Please enter any 2 numbers for addition"
+read num1 num2
+ADDITION num1 num2
+echo "Sum of 2 numbers you entered is $total"

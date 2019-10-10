@@ -1,0 +1,7 @@
+hjhhhostname 1> /dev/null
+if [ "$?" = "0" ];then
+echo "you run the command successfully"
+else
+echo "you entered wrong command"
+fi
+

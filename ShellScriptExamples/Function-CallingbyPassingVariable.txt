@@ -1,0 +1,26 @@
+#!/bin/bash
+echo "what kind of processes you want to see? RAM consuming or CPU consuming? If RAM, press ram and If CPU press cpu:"
+read userinput
+
+ram_utilization () {
+ps -eo pid,pmem,user,args|sort -nrk 2|head -$noofprocs
+}
+
+cpu_utilization () {
+ps -eo pid,pcpu,user,args|sort -nrk 2|head -$noofprocs
+
+}
+
+case $userinput in
+ram) echo "HOw many processes you want to see?"
+   read noofprocs
+   echo "These are the top $noofprocs RAM consuming processes:"
+   ram_utilization $noofprocs
+   ;;
+cpu) echo "HOw many processes you want to see?"
+   read noofprocs
+   echo "These are the top $noofprocs CPU consuming processes:"
+   cpu_utilization $noofprocs
+   ;;
+*) echo "you have entered wrong choice. Please enter either r or c"
+esac

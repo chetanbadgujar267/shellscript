@@ -1,0 +1,7 @@
+for i in `cat serverlist`
+do
+echo $i
+if [ $i = "node2" -o $i = "node3" ];then
+echo "this server will be rebooted"
+fi
+done

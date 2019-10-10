@@ -1,0 +1,21 @@
+echo "Enter animal or bird"
+read var1
+
+if [ $var1 = "animal" ];then
+echo "enter any specific animal name"
+read animal
+
+
+if [ $animal = "dog" ];then
+echo "baw baw"
+elif [ $animal = "cat" ];then
+echo "mua mua"
+elif [ $animal = "tiger" ];then
+echo "roarrrrrrrr"
+else
+echo "we cant mimic $animal"
+fi
+
+else
+echo "sorry, we can mimic only animals"
+fi

@@ -1,0 +1,15 @@
+echo "please enter add or mul or sub"
+read VAR
+
+
+if [ "$VAR" = "add" ];then
+
+echo "enter any 2 numbers"
+read a b
+c=$((a+b))
+echo "the sum of 2 numbers you entered is $c"
+
+else
+echo "you have entered word other than add. Please use add only"
+
+fi

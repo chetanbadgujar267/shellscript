@@ -1,0 +1,21 @@
+#!/bin/bash
+
+check_ram () {
+echo "These are the processes consuming high mwmory"
+ps -eo pid,pmem,user,args|sort -nrk 2|head -10
+}
+
+check_cpu () {
+echo "These are the processes consuming high mwmory"
+ps -eo pid,pcpu,user,args|sort -nrk 2|head -10
+}
+
+
+echo "what kind of process u want to see: ram-consuming or cpu-consuming"
+read userinput
+if [ "$userinput" = "ram" ];then
+check_ram
+elif [ "$userinput" = "cpu" ];then
+check_cpu
+fi
+

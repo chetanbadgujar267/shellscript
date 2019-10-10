@@ -1,0 +1,13 @@
+echo "enter parrot or tiger"
+read var1
+
+if [ $var1 = "parrot" ];then
+echo "you have entered bird name"
+
+elif [ $var1 = "tiger" ];then
+echo "you have entered animal name"
+
+else
+echo "you have neter wrong choice"
+
+fi
