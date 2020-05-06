@@ -38,3 +38,5 @@ else
 echo -e "\nYou must need to enter margin time and it should be greater than 0."
 echo -e "Try Again.\n"
 fi
+
+echo -e "Thanks for using this Software!\n"
