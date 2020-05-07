@@ -28,7 +28,7 @@ startLine=$((lineNumber-count+1))
 endLine=$((lineNumber))
 startTime=`sed -n "$startLine"p inputFile.txt | awk '{print $2}'`
 endTime=`sed -n "$endLine"p inputFile.txt | awk '{print $2}'`
-echo "$startTime - $endTime" >> outputFile.txt
+echo -e "$startTime - $endTime\r\n"
 echo -e "\nSoftware is still running..."
 fi
 count=0
@@ -47,5 +47,4 @@ echo -e "Thanks for using this Software!\n"
 else
 echo -e "No free time slots for the given margin time."
 echo -e "Thanks for using this Software!\n"
-exit
 fi
